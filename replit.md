@@ -50,7 +50,22 @@ The landing page is built using HTML5 for structure, CSS3 with custom properties
 - **Server**: Python HTTP Server for local development.
 - **Form Submission**: Configured for demonstration (console.log); designed for API integration in production.
 
+## Replit Environment Setup
+- **Server**: Python 3 HTTP server (`server.py`) configured to serve static files on port 5000 with cache-control headers
+- **Workflow**: Configured to run `python3 server.py` on port 5000 with webview output
+- **Deployment**: Autoscale deployment configured for production (stateless website)
+- **Dependencies**: Python 3.11+ with Pillow library (managed via pyproject.toml)
+- **Assets**: All images stored in `attached_assets/` directory
+
 ## Recent Changes
+
+### October 17, 2025 - Replit Environment Setup
+**Changes Made:**
+- Added `server.py` - Python HTTP server with cache-control headers to prevent caching issues
+- Added `.gitignore` - Configured for Python, UV, and Replit environment files
+- Configured workflow to serve website on port 5000
+- Set up autoscale deployment configuration for production
+- Verified all assets load correctly and website is fully functional
 
 ### October 17, 2025 - Testimonials Slider Complete Implementation
 **Changes Made:**
