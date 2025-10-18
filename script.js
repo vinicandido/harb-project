@@ -68,19 +68,18 @@ if (galleryPrevBtn && galleryNextBtn && gallerySlider) {
     function updateGallerySlider(transition = true) {
         if (!transition) {
             gallerySlider.style.transition = 'none';
+        } else {
+            gallerySlider.style.transition = 'transform 0.5s ease-in-out';
         }
         const offset = -galleryCurrentSlide * 100;
         gallerySlider.style.transform = `translateX(${offset}%)`;
         
         if (!transition) {
-            setTimeout(() => {
-                gallerySlider.style.transition = 'transform 0.5s ease-in-out';
-            }, 50);
+            gallerySlider.offsetHeight; // Force reflow
         }
     }
 
     function handleGalleryTransitionEnd(e) {
-        // Only handle transform transitions to avoid multiple triggers
         if (e.propertyName !== 'transform') return;
         
         if (galleryCurrentSlide === 0) {
@@ -99,24 +98,14 @@ if (galleryPrevBtn && galleryNextBtn && gallerySlider) {
         if (isGalleryTransitioning) return;
         isGalleryTransitioning = true;
         galleryCurrentSlide++;
-        updateGallerySlider();
-        
-        // Safety timeout to reset flag if transitionend doesn't fire
-        setTimeout(() => {
-            isGalleryTransitioning = false;
-        }, 600);
+        updateGallerySlider(true);
     }
 
     function prevGallerySlide() {
         if (isGalleryTransitioning) return;
         isGalleryTransitioning = true;
         galleryCurrentSlide--;
-        updateGallerySlider();
-        
-        // Safety timeout to reset flag if transitionend doesn't fire
-        setTimeout(() => {
-            isGalleryTransitioning = false;
-        }, 600);
+        updateGallerySlider(true);
     }
 
     updateGallerySlider(false);
@@ -517,25 +506,24 @@ if (heroPrevBtn && heroNextBtn && heroSlider) {
     heroSlider.appendChild(firstClone);
     heroSlider.insertBefore(lastClone, heroSlides[0]);
     
-    let heroCurrentSlide = 1; // Start at real first slide (after cloned last)
+    let heroCurrentSlide = 1;
     let isTransitioning = false;
 
     function updateHeroSlider(transition = true) {
         if (!transition) {
             heroSlider.style.transition = 'none';
+        } else {
+            heroSlider.style.transition = 'transform 0.5s ease-in-out';
         }
         const offset = -heroCurrentSlide * 100;
         heroSlider.style.transform = `translateX(${offset}%)`;
         
         if (!transition) {
-            setTimeout(() => {
-                heroSlider.style.transition = 'transform 0.5s ease-in-out';
-            }, 50);
+            heroSlider.offsetHeight; // Force reflow
         }
     }
 
     function handleTransitionEnd(e) {
-        // Only handle transform transitions to avoid multiple triggers
         if (e.propertyName !== 'transform') return;
         
         if (heroCurrentSlide === 0) {
@@ -554,27 +542,16 @@ if (heroPrevBtn && heroNextBtn && heroSlider) {
         if (isTransitioning) return;
         isTransitioning = true;
         heroCurrentSlide++;
-        updateHeroSlider();
-        
-        // Safety timeout to reset flag if transitionend doesn't fire
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 600);
+        updateHeroSlider(true);
     }
 
     function prevSlide() {
         if (isTransitioning) return;
         isTransitioning = true;
         heroCurrentSlide--;
-        updateHeroSlider();
-        
-        // Safety timeout to reset flag if transitionend doesn't fire
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 600);
+        updateHeroSlider(true);
     }
 
-    // Set initial position
     updateHeroSlider(false);
 
     heroPrevBtn.addEventListener('click', prevSlide);
@@ -592,10 +569,8 @@ if (heroPrevBtn && heroNextBtn && heroSlider) {
         clearInterval(heroAutoScrollInterval);
     }
 
-    // Start auto-scroll on page load
     startHeroAutoScroll();
 
-    // Stop auto-scroll when user interacts
     heroSlider.addEventListener('mouseenter', stopHeroAutoScroll);
     heroSlider.addEventListener('mouseleave', startHeroAutoScroll);
     heroPrevBtn.addEventListener('click', () => {
@@ -774,34 +749,31 @@ if (testimonialsPrevBtn && testimonialsNextBtn && testimonialsSlider && window.i
     testimonialsSlider.insertBefore(lastClone2, testimonialsSlides[0]);
     testimonialsSlider.insertBefore(lastClone3, testimonialsSlides[0]);
     
-    let testimonialsCurrentSlide = 3; // Start at position 3 (after the 3 cloned slides)
+    let testimonialsCurrentSlide = 3;
     let isTestimonialsTransitioning = false;
 
     function getSlideWidth() {
-        // Check if desktop (>1024px) - show 3 cards, otherwise show 1
         return window.innerWidth > 1024 ? 33.333 : 100;
     }
 
     function updateTestimonialsSlider(transition = true) {
         if (!transition) {
             testimonialsSlider.style.transition = 'none';
+        } else {
+            testimonialsSlider.style.transition = 'transform 0.5s ease-in-out';
         }
         const slideWidth = getSlideWidth();
         const offset = -testimonialsCurrentSlide * slideWidth;
         testimonialsSlider.style.transform = `translateX(${offset}%)`;
         
         if (!transition) {
-            setTimeout(() => {
-                testimonialsSlider.style.transition = 'transform 0.5s ease-in-out';
-            }, 50);
+            testimonialsSlider.offsetHeight; // Force reflow
         }
     }
 
     function handleTestimonialsTransitionEnd(e) {
-        // Only handle transform transitions to avoid multiple triggers
         if (e.propertyName !== 'transform') return;
         
-        // Loop logic for both desktop (3 cards) and mobile (1 card)
         if (testimonialsCurrentSlide <= 2) {
             testimonialsCurrentSlide = testimonialsTotalSlides + 2;
             updateTestimonialsSlider(false);
@@ -818,29 +790,18 @@ if (testimonialsPrevBtn && testimonialsNextBtn && testimonialsSlider && window.i
         if (isTestimonialsTransitioning) return;
         isTestimonialsTransitioning = true;
         testimonialsCurrentSlide++;
-        updateTestimonialsSlider();
-        
-        // Safety timeout to reset flag if transitionend doesn't fire
-        setTimeout(() => {
-            isTestimonialsTransitioning = false;
-        }, 600);
+        updateTestimonialsSlider(true);
     }
 
     function prevTestimonialsSlide() {
         if (isTestimonialsTransitioning) return;
         isTestimonialsTransitioning = true;
         testimonialsCurrentSlide--;
-        updateTestimonialsSlider();
-        
-        // Safety timeout to reset flag if transitionend doesn't fire
-        setTimeout(() => {
-            isTestimonialsTransitioning = false;
-        }, 600);
+        updateTestimonialsSlider(true);
     }
 
     updateTestimonialsSlider(false);
     
-    // Update on window resize - reinitialize if crossing desktop threshold
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
