@@ -432,6 +432,192 @@ body {
     margin-top: 2rem;
 }
 
+/* Pricing Plans Section */
+.pricing-plans {
+    background: linear-gradient(135deg, #06112F 0%, #0a1a4a 100%);
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-plans::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.pricing-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 1rem 0;
+}
+
+.pricing-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-weight: 400;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.plan-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 3px solid transparent;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.plan-featured {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
+    border: 3px solid #FFD700;
+    transform: scale(1.05);
+}
+
+.plan-featured:hover {
+    transform: scale(1.08) translateY(-10px);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFD700;
+    color: #06112F;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.plan-icon {
+    background: linear-gradient(135deg, #06112F 0%, #0a1a4a 100%);
+    color: #FFFFFF;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    box-shadow: 0 4px 15px rgba(6, 17, 47, 0.3);
+}
+
+.plan-featured .plan-icon {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #06112F;
+}
+
+.plan-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #06112F;
+    margin: 0 0 0.5rem 0;
+}
+
+.plan-description {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin: 0 0 1.5rem 0;
+    line-height: 1.5;
+    min-height: 50px;
+}
+
+.plan-savings {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.savings-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.savings-amount {
+    display: block;
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.plan-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.plan-feature svg {
+    color: #10B981;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.plan-feature span {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.pricing-cta {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-large {
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+}
+
 /* Smart Investment Section */
 .smart-investment {
     background: var(--white);
@@ -1365,6 +1551,30 @@ body {
         height: 280px;
     }
 
+    /* Pricing Plans responsivo - Tablet */
+    .pricing-title {
+        font-size: 2.2rem;
+    }
+
+    .pricing-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 500px;
+        margin: 0 auto 3rem auto;
+    }
+
+    .plan-featured {
+        transform: scale(1);
+    }
+
+    .plan-featured:hover {
+        transform: scale(1.02) translateY(-5px);
+    }
+
     /* Smart Investment responsivo - Tablet */
     .investment-content {
         gap: 2.5rem;
@@ -1586,6 +1796,42 @@ body {
     .benefit-card img {
         max-width: 100%;
         height: 400px;
+    }
+
+    /* Pricing Plans responsivo - Mobile */
+    .pricing-title {
+        font-size: 1.8rem;
+    }
+
+    .pricing-subtitle {
+        font-size: 1rem;
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .plan-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .plan-name {
+        font-size: 1.5rem;
+    }
+
+    .plan-description {
+        font-size: 1rem;
+        min-height: auto;
+    }
+
+    .savings-amount {
+        font-size: 1.7rem;
+    }
+
+    .btn-large {
+        font-size: 1.1rem;
+        padding: 0.9rem 2rem;
     }
 
     /* Smart Investment responsivo - Mobile */
@@ -1909,6 +2155,31 @@ body {
 
     .kits-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Pricing Plans responsivo - Mobile pequeno */
+    .pricing-title {
+        font-size: 1.5rem;
+    }
+
+    .pricing-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .plan-name {
+        font-size: 1.3rem;
+    }
+
+    .plan-description {
+        font-size: 0.95rem;
+    }
+
+    .plan-feature span {
+        font-size: 0.95rem;
+    }
+
+    .savings-amount {
+        font-size: 1.5rem;
     }
 
     /* Smart Investment responsivo - Mobile pequeno */
