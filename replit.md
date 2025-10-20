@@ -1,91 +1,37 @@
-# Landing Page HARB - Clone Personalizado
+# HARB Saúde e Bem-Estar - Project Documentation
 
 ## Overview
-This project is a custom-designed landing page for HARB Saúde e Bem-estar. Its primary purpose is to promote HARB's technology rental services, focusing on aesthetic laser equipment. The page aims to drive lead generation through a contact form and clearly communicate the benefits of HARB's "Intelligent Rental with Integrated Management" model. The project's ambition is to effectively market high-end aesthetic technology rentals, positioning HARB as a key partner for clinics seeking growth and increased revenue.
+Portuguese-language landing page website for HARB Saúde e Bem-Estar, a medical equipment rental clinic specializing in aesthetic devices. The site features equipment showcases, benefit descriptions, rental process information, and a contact form.
 
-## User Preferences
-- The user wants the agent to adhere strictly to the provided design specifications, including color palettes, font sizes, and responsive behaviors.
-- The user prefers clear and concise explanations for any proposed changes or decisions.
-- The user prefers an iterative development approach, focusing on implementing one section or feature at a time for review.
-- The user wants to avoid auto-scrolling features unless explicitly requested.
-- The user emphasizes precise control over image dimensions and spacing, especially within galleries.
-- The user expects the agent to prioritize custom SVG icons and consistent use of brand identity elements.
-
-## System Architecture
-The landing page is built using HTML5 for structure, CSS3 with custom properties for styling, and vanilla JavaScript (ES6+) for interactive functionalities.
-
-### UI/UX Decisions
-- **Brand Identity**: Custom HARB logo and a defined color palette (`Primary: #06112F`, `Secondary: #06112F`, `Background: #F0F0F0`) are consistently applied.
-- **Unified Design**: A consistent light gray background (`#F0F0F0`) is used across all sections.
-- **Responsive Design**: The layout is fully responsive with specific breakpoints for Desktop (> 1024px), Tablet (768px - 1024px), and Mobile (< 767px). Desktop enhancements include progressive enlargement of header elements, wider containers, and increased font sizes.
-- **Interactive Elements**: Buttons feature gradient linear fills and hover effects. Cards include hover effects.
-- **Animations**: Smooth scroll for anchor links, fade-in elements on scroll (IntersectionObserver), and a "shake" effect for CTA buttons on tablet/mobile when in viewport.
-
-### Technical Implementations
-- **HTML Structure**: Semantic HTML5 is used (`index.html`).
-- **CSS Styling**: `style.css` manages responsive design using media queries and CSS variables.
-- **JavaScript Functionality**: `script.js` handles:
-    - **Mobile Navigation**: Hamburger menu toggle.
-    - **Sliders**: Infinite circular sliders for Hero, Product Gallery, and Testimonials. These feature auto-scroll (4s, pause on hover/touch), manual navigation (arrows on desktop, swipe on touch devices), and clone-based looping for seamless transitions.
-    - **Product Gallery Specifics**: Uses transform-based approach for desktop and scroll-based with clones for mobile/tablet for native drag feedback.
-    - **Contact Form**: Includes input masks (CNPJ, phone), validation for terms, and submission feedback.
-
-### Feature Specifications
-- **Header**: Responsive HARB logo, desktop navigation, "Falar com especialista" CTA.
-- **Hero Section**: Dynamic title with an infinite circular slider.
-- **Benefits Section**: Badge, title, description, and 4 cards detailing HARB's advantages.
-- **Product Gallery**: Infinite circular slider displaying equipment.
-- **Intelligent Investment Section**: Highlights cost-saving benefits with custom SVG icons.
-- **Intelligent Rental HSB™ Section**: Details HARB's rental model with a rocket icon and benefit cards.
-- **National Delivery Section**: Emphasizes nationwide delivery and flexible contracts.
-- **Simulation CTA Section**: Dark blue gradient section acting as a call-to-action to the form.
-- **Process Section**: Step-by-step guide with 6 cards, each with a custom SVG icon.
-- **Testimonials Section**: Infinite circular slider displaying customer reviews with auto-scroll and navigation.
-- **Form Section**: Lead capture form with custom validation, updated title, and button text, with an animated scroll indicator.
-- **Footer**: Legal information and HARB logo.
-
-## External Dependencies
-- **Google Fonts**: Poppins font.
-- **Images**: Product images from an external server; HARB logo stored locally in `attached_assets/`.
-- **Server**: Python HTTP Server for local development.
-- **Form Submission**: Configured for demonstration (console.log); designed for API integration in production.
-
-## Replit Environment Setup
-- **Server**: Python 3 HTTP server (`server.py`) configured to serve static files on port 5000 with cache-control headers
-- **Workflow**: Configured to run `python3 server.py` on port 5000 with webview output
-- **Deployment**: Autoscale deployment configured for production (stateless website)
-- **Dependencies**: Python 3.11+ with Pillow library (managed via pyproject.toml)
-- **Assets**: All images stored in `attached_assets/` directory
+## Project Structure
+- **Frontend**: Static HTML/CSS/JavaScript website
+- **Server**: Python simple HTTP server serving static files on port 5000
+- **Dependencies**: Python 3.11+ with Pillow (managed via pyproject.toml and uv)
+- **Assets**: Medical equipment images, logos, and graphics in `attached_assets/` directory
 
 ## Recent Changes
+- **2025-10-20**: Initial import and Replit environment setup
+  - Configured workflow to run Python server on port 5000
+  - Server already properly configured with 0.0.0.0 binding and cache-control headers
+  - Project ready for development
 
-### October 18, 2025 - Fixed Infinite Loop on All Sliders
-**Changes Made:**
-- **Fixed Hero Slider**: Corrected infinite loop logic to prevent white screens when clicking rapidly
-- **Fixed Gallery Slider**: Improved transition management for seamless looping
-- **Fixed Testimonials Slider**: Enhanced clone-based looping for desktop 3-card view
-- **Key Improvements**:
-  - Explicit transition control: transitions are now explicitly set to 'transform 0.5s ease-in-out' or 'none'
-  - Force reflow: added `slider.offsetHeight` to ensure browser processes changes immediately
-  - Removed unsafe timeout fallbacks: now relies only on `transitionend` event for proper synchronization
-  - Better transition guards: `isTransitioning` flag prevents overlapping animations
-- All sliders now work perfectly even with rapid clicking, maintaining seamless infinite loops
+## Key Features
+- Responsive design with mobile navigation
+- Multiple image sliders (hero section, equipment gallery)
+- Contact form with CNPJ and phone number masking
+- Smooth scroll navigation
+- Auto-scrolling image carousels
+- Animation effects on scroll
 
-### October 17, 2025 - Replit Environment Setup
-**Changes Made:**
-- Added `server.py` - Python HTTP server with cache-control headers to prevent caching issues
-- Added `.gitignore` - Configured for Python, UV, and Replit environment files
-- Configured workflow to serve website on port 5000
-- Set up autoscale deployment configuration for production
-- Verified all assets load correctly and website is fully functional
+## Running the Project
+The project runs automatically via the configured workflow:
+- Command: `python3 server.py`
+- Port: 5000 (frontend)
+- Host: 0.0.0.0 (allows Replit proxy)
 
-### October 17, 2025 - Testimonials Slider Complete Implementation
-**Changes Made:**
-- **Desktop Display (>1024px)**: Shows 3 testimonial cards side-by-side (33.333% width each) with transform-based slider
-- **Mobile/Tablet Display (≤1024px)**: Shows 1 card at a time using native scroll-snap behavior
-- **Uniform Card Heights**: All cards have min-height of 280px with flexbox for consistent sizing
-- **Clone-based Looping**: Uses 3 clones on each side for seamless infinite loop on desktop
-- **JavaScript Optimization**: Slider logic only executes on screens >1024px; mobile/tablet use pure CSS scroll
-- **CSS Override**: Added `transform: none !important` in mobile/tablet breakpoints to prevent JavaScript conflicts
-- **Anti-Lock Protection**: Applied to all sliders (Hero, Gallery, Testimonials) - filters transitionend events by property name and adds 600ms safety timeout
-- **Mobile/Tablet Fix**: Cards now display correctly on all screen sizes with proper scroll-snap behavior
+## Architecture
+Simple static website architecture:
+- No backend API or database
+- Form submissions currently client-side only (console.log)
+- All content is Portuguese language
+- Designed for medical equipment rental business
