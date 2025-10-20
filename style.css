@@ -145,7 +145,7 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(to left, #0a1a45, #06112F);
+    background: linear-gradient(to left, #4960a2, #051133);
     color: var(--white);
 }
 
@@ -556,7 +556,7 @@ body {
 }
 
 .plan-savings {
-    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    background: linear-gradient(135deg, #06112F 0%, #3855a3 100%);
     border-radius: 12px;
     padding: 1rem;
     margin-bottom: 1.5rem;
@@ -1006,7 +1006,7 @@ body {
     text-align: center;
     font-size: 1.2rem;
     color: #06112F;
-    font-weight: 700;
+    font-weight: 350;
     margin-bottom: 3rem;
     max-width: 800px;
     margin-left: auto;
@@ -1317,7 +1317,7 @@ body {
 }
 
 .process-scroll-indicator svg {
-    color: #FFFFFF;
+    color:#06112F;
     animation: bounce 2s infinite;
 }
 
@@ -1328,7 +1328,7 @@ body {
 }
 
 .testimonials-scroll-indicator svg {
-    color: #FFFFFF;
+    color:#06112F;
     animation: bounce 2s infinite;
 }
 
@@ -1339,7 +1339,7 @@ body {
 }
 
 .form-scroll-indicator svg {
-    color: #FFFFFF;
+    color: #06112F;
     animation: bounce 2s infinite;
 }
 
