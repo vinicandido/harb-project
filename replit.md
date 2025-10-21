@@ -10,10 +10,13 @@ Portuguese-language landing page website for HARB Saúde e Bem-Estar, a medical 
 - **Assets**: Medical equipment images, logos, and graphics in `attached_assets/` directory
 
 ## Recent Changes
-- **2025-10-20**: Initial import and Replit environment setup
-  - Configured workflow to run Python server on port 5000
-  - Server already properly configured with 0.0.0.0 binding and cache-control headers
-  - Project ready for development
+- **2025-10-21**: Completed Replit environment setup for GitHub import
+  - Configured workflow "Server" to run Python HTTP server on port 5000
+  - Server properly configured with 0.0.0.0 binding and cache-control headers for Replit proxy
+  - Deployment configured for autoscale (stateless web hosting)
+  - Verified website loads correctly with all assets
+  - Fixed .gitignore to track uv.lock file (required for reproducible builds)
+  - Project ready for development and deployment
   - Added 4 benefit cards to "smart-investment" section with green check icons
   - Created new "pricing-plans" section featuring 3 rental plan options:
     - Plano Avulso: Flexible daily/weekly rentals for testing
