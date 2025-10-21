@@ -58,7 +58,7 @@ body {
 }
 
 .navbar {
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
 }
 
 .nav-wrapper {
@@ -75,7 +75,7 @@ body {
 }
 
 .logo img {
-    height: 50px;
+    height: 40px;
     width: auto;
     background: transparent;
 }
