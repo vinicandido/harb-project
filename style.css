@@ -195,7 +195,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: center;
-    text-align: center;
+    text-align: left;
 }
 
 .hero-product-img {
@@ -241,6 +241,7 @@ body {
     overflow: hidden;
     position: relative;
     width: 100%;
+    margin-top: 14px;
 }
 
 .hero-slider {
@@ -248,6 +249,7 @@ body {
     transition: transform 0.5s ease-in-out;
     will-change: transform;
     width: 100%;
+     margin-top: 14px;
 }
 
 .hero-slider-mobile-wrapper {
@@ -994,7 +996,7 @@ body {
 .section-subtitle-form {
     text-align: center;
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-light);
     margin-bottom: 1rem;
     max-width: 800px;
@@ -1031,7 +1033,7 @@ body {
 }
 
 .form-group label {
-    font-weight: 600;
+    font-weight: 800;
     color: #06112F;
     margin-bottom: 0.5rem;
 }
@@ -1543,7 +1545,7 @@ body {
 
 
 /* Tablet - 768px to 1024px (hamburger menu) */
-@media (min-width: 768px) and (max-width: 1522px) {
+@media (min-width: 768px) and (max-width: 1000px) {
 
     /* Aumentar logo e texto em tablets */
     .logo img {
@@ -1980,7 +1982,7 @@ body {
     .testimonial-card {
         max-width: 600px;
         width: 100%;
-        min-height: 280px;
+        min-height: 100%;
         cursor: grab;
         user-select: none;
     }
@@ -2422,6 +2424,7 @@ body {
 
 /* Desktop Grande - Aumentar ainda mais para telas muito grandes */
 @media (min-width: 1201px) {
+
     /* Aumentar ainda mais a largura do container */
     .container {
         max-width: 1400px;
@@ -2465,6 +2468,7 @@ body {
 
     .hero-subtitle {
         font-size: 1.3rem;
+
     }
 
     .section-title {
