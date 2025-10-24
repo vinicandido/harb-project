@@ -12,8 +12,11 @@ Portuguese-language landing page website for HARB Saúde e Bem-Estar, a medical 
 ## Recent Changes
 - **2025-10-21**: 
   - Added WhatsApp CTA button in hero section with green gradient and WhatsApp icon
-  - Created trust badge bar at end of hero with 4 key benefits (Suporte Técnico, Logística Nacional, Contratos Sob Medida, Materiais & Checklists)
+  - Created trust badge bar at end of hero section with full-width design
+  - Trust seal shield icon positioned on the left with green glow effect
+  - 4 key benefits displayed: Suporte Técnico, Logística Nacional, Contratos Sob Medida, Materiais & Checklists
   - Trust bar features blue background (#06112F) with white text and green accent icons
+  - Mobile optimization: only trust seal displayed on mobile devices, text items hidden
   - Fully responsive design for both WhatsApp button and trust bar on mobile/tablet
   - Reduced header height for cleaner design (padding reduced and logo size decreased)
   - Hero section alignment adjusted for desktop - text and CTA button now left-aligned
