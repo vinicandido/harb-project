@@ -1028,14 +1028,15 @@ body {
 }
 
 .gallery-slide {
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
+    width: calc(100% / 3);
+    min-width: calc(100% / 3);
+    max-width: calc(100% / 3);
     flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    padding: 0 10px;
 }
 
 .gallery-slide img {
@@ -2169,6 +2170,14 @@ body {
 
     .solution-text {
         font-size: 1rem;
+    }
+
+    /* Gallery slider - 1 imagem por vez no mobile */
+    .gallery-slide {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 0;
     }
 
     /* Smart Rental responsivo - Mobile */

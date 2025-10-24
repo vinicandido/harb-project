@@ -71,7 +71,7 @@ if (galleryPrevBtn && galleryNextBtn && gallerySlider) {
         } else {
             gallerySlider.style.transition = 'transform 0.5s ease-in-out';
         }
-        const offset = -galleryCurrentSlide * 100;
+        const offset = -galleryCurrentSlide * (100 / 3);
         gallerySlider.style.transform = `translateX(${offset}%)`;
         
         if (!transition) {
