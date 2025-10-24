@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2family=Red+Hat+Display:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
     /* Color Palette - Based on HARB Logo */
@@ -19,7 +20,7 @@
     --border-color: #E0E6EA;
 
     /* Typography */
-    --font-primary: 'Poppins', sans-serif;
+    --font-primary: 'Red Hat Display', sans-serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -27,6 +28,12 @@
     --spacing-md: 2rem;
     --spacing-lg: 3rem;
     --spacing-xl: 4rem;
+}
+
+
+/* O resto do seu CSS */
+body {
+  /* ... */
 }
 
 html {
@@ -46,7 +53,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 /* Header and Navigation */
@@ -81,7 +88,7 @@ body {
 }
 
 .logo-text {
-    font-size: 0.65rem;
+    font-size: 0.45rem;
     font-weight: 600;
     color: #06112F;
     letter-spacing: 0.3px;
@@ -94,15 +101,15 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
 }
 
 .nav-menu li a {
     text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-    font-size: 0.8rem;
+    color: black;
+    font-weight: 400;
+    font-size: 0.7rem;
     transition: color 0.3s ease;
     white-space: nowrap;
 }
@@ -118,7 +125,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 1.5px;
 }
 
 .menu-toggle span {
@@ -184,22 +191,59 @@ body {
     box-shadow: 0 3px 12px rgba(6, 17, 47, 0.3);
 }
 
+/* WhatsApp Button */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 50px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background: linear-gradient(135deg, #128C7E, #075E54);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp svg {
+    flex-shrink: 0;
+}
+
+.hero-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
 /* Hero Section */
 .hero {
     background: #F0F0F0;
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     text-align: left;
+    padding: 0 3rem 3rem 3rem;
 }
 
 .hero-product-img {
-    max-width: 350px;
+    max-width: 500px;
     margin-bottom: 1rem;
 }
 
@@ -207,25 +251,25 @@ body {
     font-size: 1.75rem;
     font-weight: 700;
     color: #06112F;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    /* line-height: 1.3; */
+    /* letter-spacing: 0.1em; */
 }
 
 .hero-subtitle {
     font-size: 0.95rem;
-    color: var(--text-light);
     margin-bottom: 1.5rem;
-    font-weight: 300;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 1.9;
+    color:black;
 }
 
-.hero-delivery {
+/* .hero-delivery {
     margin-top: 0.5rem;
     color: var(--text-dark);
     font-weight: 400;
     font-size: 0.9rem;
-}
+} */
 
 .delivery-icon {
     display: inline-block;
@@ -330,6 +374,41 @@ body {
     display: none;
 }
 
+/* Trust Bar */
+.trust-bar {
+    background: #06112F;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+.trust-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.trust-item svg {
+    color: #25D366;
+    flex-shrink: 0;
+}
+
+.trust-divider {
+    width: 1px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
 /* Benefits Section */
 .benefits {
     padding: 3rem 0;
@@ -339,9 +418,9 @@ body {
 .benefits-badge {
     display: inline-block;
     padding: 0.6rem 1.5rem;
-    border: 2px solid #06112F;
+    border: 2px solid #596da1;
     border-radius: 50px;
-    color: #06112F;
+    color: #596da1;
     font-weight: 700;
     font-size: 1rem;
     margin: 0 auto 1.5rem;
@@ -357,15 +436,16 @@ body {
 }
 
 .benefits .section-title {
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: black;
 }
 
 .section-title {
     text-align: center;
     font-size: 1.8rem;
-    font-weight: 700;
-    color: #06112F;
+    font-weight: 600;
+    color: black;
     margin-bottom: 0.75rem;
 }
 
@@ -380,7 +460,6 @@ body {
 .section-description {
     text-align: center;
     font-size: 0.95rem;
-    color: var(--text-light);
     margin-bottom: 2rem;
     max-width: 800px;
     margin-left: auto;
@@ -388,8 +467,8 @@ body {
 }
 
 .benefits .section-description {
-    color: #6B7280;
     font-size: 1rem;
+    color: black;
 }
 
 .benefits-grid {
@@ -753,6 +832,7 @@ body {
     background: #F0F0F0;
     padding: 2rem 0 1rem 0;
     text-align: center;
+    
 }
 
 .gallery-title-section .section-title {
@@ -1545,7 +1625,7 @@ body {
 
 
 /* Tablet - 768px to 1024px (hamburger menu) */
-@media (min-width: 768px) and (max-width: 1000px) {
+@media (min-width: 768px) and (max-width: 1180px) {
 
     /* Aumentar logo e texto em tablets */
     .logo img {
@@ -1628,7 +1708,7 @@ body {
         right: 0;
         background: #F0F0F0;
         flex-direction: column;
-        padding: 1rem;
+        padding: 0.5rem;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         display: none;
     }
@@ -1708,6 +1788,33 @@ body {
 
     .hero-subtitle {
         font-size: 1rem;
+    }
+
+    .hero-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .btn-whatsapp {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        padding: 16px 40px;
+        font-size: 0.75rem;
+    }
+
+    .trust-items {
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .trust-item {
+        font-size: 0.75rem;
+    }
+
+    .trust-divider {
+        display: none;
     }
 
     .section-title {
@@ -2339,7 +2446,7 @@ body {
 
     /* Texto do logo mantém progressão do tablet (1.1rem) */
     .logo-text {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         max-width: 320px;
     }
 
@@ -2380,7 +2487,7 @@ body {
     .hero-title {
         font-size: 2rem;
         margin-bottom: 0;
-        line-height: 1.8;
+        line-height: 1.3;
     }
 
     .hero-subtitle {
@@ -2427,23 +2534,23 @@ body {
 
     /* Aumentar ainda mais a largura do container */
     .container {
-        max-width: 1400px;
+        max-width: 1320px;
     }
 
     /* Aumentar ainda mais o logo (progressão: 90px tablet → 95px desktop → 110px desktop grande) */
     .logo img {
-        height: 110px;
+        height: 80px;
     }
 
     /* Aumentar ainda mais o texto do logo (progressão: 1.1rem tablet → 1.1rem desktop → 1.3rem desktop grande) */
     .logo-text {
-        font-size: 1.3rem;
-        max-width: 380px;
+        font-size: 1.1rem;
+        max-width: 350px;
     }
 
     /* Aumentar ainda mais o espaçamento da navegação */
     .nav-menu {
-        gap: 2.5rem;
+        gap: 1.8rem;
     }
 
     /* Testemunhos - ajustar padding para desktop grande */
@@ -2452,18 +2559,19 @@ body {
     }
 
     .nav-menu li a {
-        font-size: 1.15rem;
+        font-size: 1rem;
     }
 
     /* Aumentar ainda mais o botão CTA */
     .cta-btn {
-        padding: 16px 48px;
-        font-size: 1.15rem;
+        padding: 14px 46px;
+        font-size: 1.13rem;
     }
 
     /* Aumentar ainda mais os títulos */
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 3rem;
+        padding-top: 1rem;
     }
 
     .hero-subtitle {
@@ -2472,7 +2580,7 @@ body {
     }
 
     .section-title {
-        font-size: 2.9rem;
+        font-size: 2.5rem;
     }
 
     .section-subtitle {
