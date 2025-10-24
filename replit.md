@@ -26,6 +26,13 @@ Portuguese-language landing page website for HARB Saúde e Bem-Estar, a medical 
     - Cards feature white background with hover effects and blue circular icons
     - Section positioned between pricing plans and CTA button
     - Maintains consistent design with existing pricing section styling
+  - **Included Features Notice Added:**
+    - Added professional notice box before CTA button
+    - Text: "Todos incluem: treinamento operacional, checklist de segurança, suporte técnico e orientação comercial"
+    - Features semi-transparent white background with border and backdrop blur
+    - Circular checkmark icon in white circle
+    - Fully responsive: horizontal layout on desktop, vertical centered on mobile
+    - Positioned between add-ons section and CTA button
 
 - **2025-10-21**: 
   - Added WhatsApp CTA button in hero section with green gradient and WhatsApp icon

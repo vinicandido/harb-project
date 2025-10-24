@@ -804,6 +804,48 @@ body {
     margin: 0;
 }
 
+/* Pricing Notice */
+.pricing-notice {
+    max-width: 700px;
+    margin: 2.5rem auto 0 auto;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+
+.notice-icon {
+    background: rgba(255, 255, 255, 0.95);
+    color: #06112F;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.notice-text {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+}
+
+.notice-text strong {
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
 /* Smart Investment Section */
 .smart-investment {
     background: var(--white);
@@ -2092,6 +2134,19 @@ body {
 
     .addon-description {
         font-size: 0.85rem;
+    }
+
+    /* Pricing Notice responsivo - Mobile */
+    .pricing-notice {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25rem 1rem;
+        margin: 2rem auto 0 auto;
+    }
+
+    .notice-text {
+        text-align: center;
+        font-size: 0.9rem;
     }
 
     /* Smart Investment responsivo - Mobile */
