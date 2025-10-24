@@ -55,14 +55,24 @@ if (galleryPrevBtn && galleryNextBtn && gallerySlider) {
     const gallerySlides = gallerySlider.querySelectorAll('.gallery-slide');
     const galleryTotalSlides = gallerySlides.length;
     
-    // Clone first and last slides for infinite loop
-    const firstClone = gallerySlides[0].cloneNode(true);
-    const lastClone = gallerySlides[galleryTotalSlides - 1].cloneNode(true);
+    // Detectar se estamos em desktop (3 imagens por vez)
+    const isDesktop = () => window.innerWidth >= 1025;
+    const slidesToShow = () => isDesktop() ? 3 : 1;
     
-    gallerySlider.appendChild(firstClone);
-    gallerySlider.insertBefore(lastClone, gallerySlides[0]);
+    // Clone múltiplos slides para garantir loop suave
+    // Clonar 3 primeiros slides no final
+    for (let i = 0; i < 3; i++) {
+        const clone = gallerySlides[i].cloneNode(true);
+        gallerySlider.appendChild(clone);
+    }
     
-    let galleryCurrentSlide = 1;
+    // Clonar 3 últimos slides no início
+    for (let i = galleryTotalSlides - 1; i >= galleryTotalSlides - 3; i--) {
+        const clone = gallerySlides[i].cloneNode(true);
+        gallerySlider.insertBefore(clone, gallerySlider.firstChild);
+    }
+    
+    let galleryCurrentSlide = 3; // Começar após os 3 clones iniciais
     let isGalleryTransitioning = false;
 
     function updateGallerySlider(transition = true) {
@@ -71,7 +81,8 @@ if (galleryPrevBtn && galleryNextBtn && gallerySlider) {
         } else {
             gallerySlider.style.transition = 'transform 0.5s ease-in-out';
         }
-        const offset = -galleryCurrentSlide * (100 / 3);
+        const slideWidth = isDesktop() ? (100 / 3) : 100;
+        const offset = -galleryCurrentSlide * slideWidth;
         gallerySlider.style.transform = `translateX(${offset}%)`;
         
         if (!transition) {
@@ -82,11 +93,14 @@ if (galleryPrevBtn && galleryNextBtn && gallerySlider) {
     function handleGalleryTransitionEnd(e) {
         if (e.propertyName !== 'transform') return;
         
-        if (galleryCurrentSlide === 0) {
-            galleryCurrentSlide = galleryTotalSlides;
+        // Se chegamos nos clones do início (índices 0, 1, 2)
+        if (galleryCurrentSlide <= 2) {
+            galleryCurrentSlide = galleryTotalSlides + 2;
             updateGallerySlider(false);
-        } else if (galleryCurrentSlide === galleryTotalSlides + 1) {
-            galleryCurrentSlide = 1;
+        } 
+        // Se chegamos nos clones do final (após os slides originais)
+        else if (galleryCurrentSlide >= galleryTotalSlides + 3) {
+            galleryCurrentSlide = 3;
             updateGallerySlider(false);
         }
         isGalleryTransitioning = false;
@@ -136,6 +150,15 @@ if (galleryPrevBtn && galleryNextBtn && gallerySlider) {
     galleryNextBtn.addEventListener('click', () => {
         stopGalleryAutoScroll();
         setTimeout(startGalleryAutoScroll, 10000);
+    });
+
+    // Atualizar ao redimensionar a janela
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            updateGallerySlider(false);
+        }, 150);
     });
 
     // Touch/Swipe functionality for desktop gallery

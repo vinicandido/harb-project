@@ -13,11 +13,13 @@ Portuguese-language landing page website for HARB Saúde e Bem-Estar, a medical 
 - **2025-10-24**: 
   - **Product Gallery Slider Updated:**
     - Modified desktop gallery slider to display 3 images simultaneously (side-by-side)
-    - Each slide now occupies 33.33% width on desktop (calc(100% / 3))
+    - Each slide now occupies 33.33% width on desktop (>= 1025px) (calc(100% / 3))
     - Navigation moves by 1/3 of container width per click
-    - Mobile version unchanged - continues displaying 1 image at a time
-    - Added padding between images (10px) for visual separation
+    - Mobile and tablet versions (< 1025px) display 1 image at a time
+    - Added padding between images (10px) for visual separation on desktop
+    - Fixed infinite loop bug by cloning 3 slides at each end instead of 1
     - Maintains infinite loop functionality and auto-scroll behavior
+    - Responsive design adapts on window resize
   - GitHub import successfully configured for Replit environment
   - Workflow "Server" verified running on port 5000 with webview output
   - Server bound to 0.0.0.0 with proper cache-control headers for Replit proxy compatibility
