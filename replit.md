@@ -17,6 +17,15 @@ Portuguese-language landing page website for HARB Saúde e Bem-Estar, a medical 
   - Deployment configured for autoscale (stateless web hosting)
   - All assets loading correctly, website fully functional
   - Import setup complete and ready for use
+  - **Add-ons Section Added to Pricing Plans:**
+    - Created professional add-ons section with blue gradient background matching pricing section
+    - Two add-on cards with icons and descriptions:
+      - "Operador Técnico" - qualified professional to operate equipment
+      - "Locação Combinada" - combine equipment (e.g., Lavieen + Youlaser)
+    - Fully responsive design: 2-column grid on desktop, single column on mobile
+    - Cards feature white background with hover effects and blue circular icons
+    - Section positioned between pricing plans and CTA button
+    - Maintains consistent design with existing pricing section styling
 
 - **2025-10-21**: 
   - Added WhatsApp CTA button in hero section with green gradient and WhatsApp icon

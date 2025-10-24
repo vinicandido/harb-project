@@ -499,7 +499,7 @@ body {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -723,6 +723,85 @@ body {
 .btn-large {
     font-size: 1rem;
     padding: 0.9rem 2rem;
+}
+
+/* Add-ons Section */
+.addons-section {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.addons-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.addons-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 0.5rem 0;
+}
+
+.addons-subtitle {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    font-weight: 400;
+}
+
+.addons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.addon-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.addon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: #FFFFFF;
+}
+
+.addon-icon {
+    background: linear-gradient(135deg, #06112F 0%, #0a1a4a 100%);
+    color: #FFFFFF;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 4px 12px rgba(6, 17, 47, 0.25);
+}
+
+.addon-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #06112F;
+    margin: 0 0 0.75rem 0;
+}
+
+.addon-description {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* Smart Investment Section */
@@ -1983,6 +2062,36 @@ body {
     .btn-large {
         font-size: 1.1rem;
         padding: 0.9rem 2rem;
+    }
+
+    /* Add-ons responsivo - Mobile */
+    .addons-section {
+        margin-top: 2.5rem;
+    }
+
+    .addons-title {
+        font-size: 1.3rem;
+    }
+
+    .addons-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .addons-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .addon-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .addon-name {
+        font-size: 1.1rem;
+    }
+
+    .addon-description {
+        font-size: 0.85rem;
     }
 
     /* Smart Investment responsivo - Mobile */
