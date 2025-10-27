@@ -53,7 +53,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0;
 }
 
 /* Header and Navigation */
@@ -64,9 +64,9 @@ body {
     z-index: 1000;
 }
 
-.navbar {
+/* .navbar {
     padding: 0.1rem 0;
-}
+} */
 
 .nav-wrapper {
     display: flex;
@@ -82,7 +82,7 @@ body {
 }
 
 .logo img {
-    height: 40px;
+    height: 35px;
     width: auto;
     background: transparent;
 }
@@ -239,7 +239,8 @@ body {
     gap: 1rem;
     align-items: center;
     text-align: left;
-    padding: 0 3rem 3rem 3rem;
+    /* padding: 0 3rem 3rem 3rem; */
+    margin-top: 0px;
 }
 
 .hero-product-img {
@@ -443,7 +444,7 @@ body {
 
 .benefits-badge {
     display: inline-block;
-    padding: 0.6rem 1.5rem;
+    padding: 0.4rem 1.2rem;
     border: 2px solid #596da1;
     border-radius: 50px;
     color: #596da1;
@@ -462,14 +463,15 @@ body {
 }
 
 .benefits .section-title {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
     font-weight: 500;
     color: black;
+    line-height: 1.7rem;
 }
 
 .section-title {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: black;
     margin-bottom: 0.75rem;
@@ -493,14 +495,15 @@ body {
 }
 
 .benefits .section-description {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: black;
+    padding: 0.9rem;
 }
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(5, 2fr);
+    gap: 0.8rem;
     margin-bottom: 2rem;
 }
 
@@ -508,7 +511,7 @@ body {
     text-align: center;
     padding: 0;
     background: transparent;
-    border-radius: 12px;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
@@ -519,19 +522,21 @@ body {
 .benefit-card img {
     width: 100%;
     max-width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 30px;
+    border-radius: 10px;
     margin-bottom: 0.75rem;
     border: none;
     outline: none;
+    /* padding: 0.95rem; */
 }
 
 .benefit-card h3 {
-    font-size: 1rem;
+    font-size: 1.28rem;
     font-weight: 400;
     color: #06112F;
     line-height: 1.4;
+    padding: 0rem 0.8rem 0.8rem 0.8rem;
 }
 
 .cta-center {
@@ -1216,8 +1221,13 @@ body {
 
 /* Form Section */
 .form-section {
-    padding: 3rem 0;
+    /* padding: 3rem 0; */
     background: #F0F0F0;
+}
+
+.logo-container-form{
+    text-align: center;
+    margin:0;
 }
 
 .section-subtitle-form {
@@ -2569,7 +2579,7 @@ body {
 /* Breakpoints intermediários para melhor responsividade do header */
 
 /* Mobile médio - 480px to 600px */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .logo img {
         height: 130px;
     }
@@ -2579,19 +2589,88 @@ body {
         max-width: 240px;
         white-space: normal;
     }
-}
+    .trust-bar-content {
+        justify-content: center;
+    }
+
+    .trust-seal svg {
+        width: 64px;
+        height: 64px;
+    }
+
+    .trust-items {
+        display: none;
+    }
+} */
 
 /* Mobile pequeno - 400px to 480px */
 @media (max-width: 480px) {
     .logo img {
-        height: 110px;
+        height: 150px;
     }
 
     .logo-text {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         max-width: 200px;
         white-space: normal;
     }
+    .hero-title{
+        font-size: 1.99rem;
+        line-height: 2.15rem;
+    }
+    .hero-subtitle{
+        font-size: 1.32rem;
+        padding: 0.5rem;
+    }
+    .btn{
+        margin: auto;
+        width: 95%;
+        border-radius: 15px;
+    }
+    .btn-whatsapp{
+        margin: auto;
+    }
+    .trust-bar-content {
+        justify-content: center;
+    }
+
+    .trust-seal svg {
+        width: 64px;
+        height: 64px;
+    }
+
+    .trust-items {
+        display: none;
+    }
+    section-description{
+        font-size: 3rem;
+    }
+    #btn-benefits{
+        margin: auto;
+        width: 100%;
+        border-radius: 40px;
+    }
+    #btn-whatsapp-form{
+        margin: 10px;
+        width: 93%;
+        font-size: 0.83rem;
+    }
+    #btn-form{
+        border-radius: 50px;
+        width: 95%;
+        margin: 10px;
+    }
+    .plans-grid{
+        padding: 10px;
+    }
+    .form-section{
+        margin: 10px;
+    }
+
+    .benefits-grid{
+        margin: 15px;
+    }
+    
 }
 
 /* Mobile muito pequeno - menos de 400px */
@@ -2604,6 +2683,18 @@ body {
         font-size: 1rem;
         max-width: 170px;
         white-space: normal;
+    }
+    .trust-bar-content {
+        justify-content: center;
+    }
+
+    .trust-seal svg {
+        width: 64px;
+        height: 64px;
+    }
+
+    .trust-items {
+        display: none;
     }
 }
 
@@ -2725,6 +2816,7 @@ body {
         max-width: calc(100% / 3);
         padding: 0 10px;
     }
+    
 }
 
 /* Desktop Grande - Aumentar ainda mais para telas muito grandes */
