@@ -502,7 +502,7 @@ body {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(5, 2fr);
+    grid-template-columns: repeat(4, 2fr);
     gap: 0.8rem;
     margin-bottom: 2rem;
 }
@@ -2695,6 +2695,9 @@ body {
 
     .trust-items {
         display: none;
+    }
+    .hero-title{
+        padding: 0.8rem;
     }
 }
 
