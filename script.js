@@ -947,3 +947,18 @@ if (testimonialsSlider && window.innerWidth <= 1024) {
         }, 150);
     });
 }
+const links = document.querySelectorAll('a[data-plano]');
+const mensagem = document.getElementById('mensagem');
+
+links.forEach(link => {
+  link.addEventListener('click', event => {
+    // Captura o nome do plano
+    const plano = link.getAttribute('data-plano');
+
+    // Preenche o campo do formulário
+    mensagem.value = `Olá! Tenho interesse no plano ${plano}. Poderia me passar mais informações?`;
+
+    // Foca o campo (depois da rolagem suave)
+    setTimeout(() => mensagem.focus(), 500);
+  });
+});
