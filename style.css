@@ -594,6 +594,7 @@ body {
     margin-bottom: 2rem;
     position: relative;
     z-index: 1;
+    
 }
 
 .plan-card {
@@ -605,6 +606,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     border: 2px solid transparent;
+    height: 30rem;
 }
 
 .plan-card:hover {
