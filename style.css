@@ -2835,7 +2835,7 @@ body {
 
     /* Aumentar ainda mais a largura do container */
     .container {
-        max-width: 1320px;
+        max-width: 1500px;
     }
 
     /* Aumentar ainda mais o logo (progressão: 90px tablet → 95px desktop → 110px desktop grande) */
