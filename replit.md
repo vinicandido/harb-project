@@ -10,13 +10,6 @@ Portuguese-language landing page website for HARB Saúde e Bem-Estar, a medical 
 - **Assets**: Medical equipment images, logos, and graphics in `attached_assets/` directory
 
 ## Recent Changes
-- **2025-11-12**: 
-  - **Testimonials Slider Updated:**
-    - Added 7 new feedback images from cards folder
-    - Total of 12 testimonial cards now in the slider
-    - New testimonials: Adriana Alves, Aline, Angelica, Be Fonseca, Dra Paula, Mirela, and Roberta
-    - Slider maintains infinite loop functionality with proper cloning logic
-    - Desktop displays 3 testimonials at once, mobile/tablet shows 1
 - **2025-10-24**: 
   - **Product Gallery Slider Updated:**
     - Modified desktop gallery slider to display 3 images simultaneously (side-by-side)
