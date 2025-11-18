@@ -31,11 +31,11 @@
                             <span></span>
                         </button>
                         <ul class="nav-menu" id="navMenu">
-                            <li><a href="#benefits">Formas de lucrar</a></li>
-                            <li><a href="#pricing-plans">Planos</a></li>
                             <li>
-                                <a href="#smart-rental">Locação inteligente</a>
+                                <a href="#benefits">Locação inteligente</a>
                             </li>
+                            <li><a href="#pricing-plans">Planos</a></li>
+                            <li><a href="#product-gallery">Formas de lucrar</a></li>
                             <li><a href="#process">O processo</a></li>
                             <a
                                 href="#formulario"
@@ -678,7 +678,8 @@
                     <a href="#formulario" class="botao" data-plano="Semestral">
                         <div
                             class="plan-card plan-featured"
-                            style="height: 29.6rem"
+                            style="height: 29.6rem;
+                            padding: 0.5rem;";
                         >
                             <div class="plan-badge">
                                 Recomendado<br />Melhor custo mensal
@@ -913,7 +914,7 @@
         </section>
 
         <!-- Product Gallery -->
-        <section class="product-gallery">
+        <section class="product-gallery" id="product-gallery">
             <div class="container">
                 <!-- Gallery Desktop -->
                 <div class="gallery-image">
@@ -921,25 +922,25 @@
                         <div class="gallery-slider" id="gallerySlider">
                             <div class="gallery-slide">
                                 <img
-                                    src="attached_assets/1.png"
+                                    src="img-prices/IMG_0389.PNG"
                                     alt="Laser Lavieen"
                                 />
                             </div>
                             <div class="gallery-slide">
                                 <img
-                                    src="attached_assets/2.png"
+                                    src="img-prices/IMG_0390.PNG"
                                     alt="Soprano Ice Platinum"
                                 />
                             </div>
                             <div class="gallery-slide">
                                 <img
-                                    src="attached_assets/3.png"
+                                    src="img-prices/IMG_0391.PNG"
                                     alt="Ultraformer MPT"
                                 />
                             </div>
                             <div class="gallery-slide">
                                 <img
-                                    src="attached_assets/4.png"
+                                    src="img-prices/IMG_0392.PNG"
                                     alt="Youlaser CO2"
                                 />
                             </div>
@@ -952,7 +953,7 @@
                 </div>
 
                 <!-- Gallery Mobile -->
-                <div class="gallery-image-mobile">
+                <div class="gallery-image-mobile" id="product-gallery">
                     <button class="gallery-slider-mobile-prev">‹</button>
                     <div class="gallery-slider-mobile-wrapper">
                         <div
@@ -961,25 +962,25 @@
                         >
                             <div class="gallery-slide">
                                 <img
-                                    src="attached_assets/1.png"
+                                    src="img-prices/IMG_0389.PNG"
                                     alt="Laser Lavieen"
                                 />
                             </div>
                             <div class="gallery-slide">
                                 <img
-                                    src="attached_assets/2.png"
+                                    src="img-prices/IMG_0390.PNG"
                                     alt="Soprano Ice Platinum"
                                 />
                             </div>
                             <div class="gallery-slide">
                                 <img
-                                    src="attached_assets/3.png"
+                                    src="img-prices/IMG_0391.PNG"
                                     alt="Ultraformer MPT"
                                 />
                             </div>
                             <div class="gallery-slide">
                                 <img
-                                    src="attached_assets/4.png"
+                                    src="img-prices/IMG_0392.PNG"
                                     alt="Youlaser CO2"
                                 />
                             </div>
@@ -1526,7 +1527,8 @@
                     Preencha o formulário e receba um plano estratégico com
                     projeção de faturamento.
                 </p>
-                <form class="contact-form" id="contactForm">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+                    <input type="hidden" name="access_key" value="253f26b3-d82a-49c2-bc30-3d7bdc33ef2c">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="nome">Nome Completo*</label>
@@ -1595,9 +1597,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">Tecnologia(s) de interesse*</label>
+                        <label for="text">Tecnologia(s) de interesse*</label>
                         <input
-                            type="email"
+                            type="text"
                             id="tecnologia"
                             name="tecnologia"
                             placeholder="• Lavieen • Ultraformer • Youlaser • Crio Polarys"
@@ -1606,35 +1608,42 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="data">Datas Desejadas*</label>
+                            <label for="data">Datas Desejadas</label>
                             <input
                                 type="data"
                                 id="datas"
                                 name="datas"
                                 placeholder="Digite a Data"
-                                required
+                            
                             />
                         </div>
                         <div class="form-group">
-                            <label for="agenda">Capacidade de Agenda*</label>
+                            <label for="agenda">Capacidade de Agenda</label>
                             <input
                                 type="text"
                                 id="agenda"
                                 name="agenda"
                                 placeholder="Digite a capacidade da sua agenda"
-                                required
+                                
                             />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="mensagem">Mensagem*</label>
-                        <input
+                        <textarea
+                            
+                            style="    
+                            font-weight: 800;
+                            margin-bottom: 0.5rem;
+                            font-size: 1.2rem"
+                            
                             type="text"
                             id="mensagem"
                             name="mensagem"
                             placeholder="Digite uma mensagem"
                             required
-                        />
+                            rows="4"
+                        ></textarea>
                     </div>
                     <div class="form-group checkbox-group">
                         <label class="checkbox-label">
@@ -1651,9 +1660,9 @@
                             >
                         </label>
                     </div>
-                    <a href="#formulario" class="btn btn-primary" id="btn-form"
+                    <button type="submit" class="btn btn-secondary" id="btn-form" style="margin: 0.5rem";
                         >Quero minha proposta
-                    </a>
+                    </button>
                     <a
                         href="https://wa.me/5516993154224"
                         target="_blank"
