@@ -1,4 +1,4 @@
-# harb-project
+# Clínica Saúde e Bem Estar HARB
 
 Esse projeto foi criado com tecnologias básicas, como: javascript, html 5 e css3. 
 
