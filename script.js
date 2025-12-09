@@ -413,7 +413,7 @@ if (contactForm) {
 //         // In a real application, you would send this data to a server
 //         console.log('Form Data:', formData);
 //     });
-// }
+}
 
 // Add scroll animation to elements
 const observerOptions = {
