@@ -382,38 +382,38 @@ if (contactForm) {
     }
 
     // Form Submit
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+//     contactForm.addEventListener('submit', (e) => {
+//         e.preventDefault();
 
-        // Get form data
-        const formData = {
-            nome: document.getElementById('nome').value,
-            telefone: document.getElementById('telefone').value,
-            email: document.getElementById('email').value,
-            empresa: document.getElementById('empresa').value,
-            cnpj: document.getElementById('cnpj').value,
-            termos: document.getElementById('termos').checked
-        };
+//         // Get form data
+//         const formData = {
+//             nome: document.getElementById('nome').value,
+//             telefone: document.getElementById('telefone').value,
+//             email: document.getElementById('email').value,
+//             empresa: document.getElementById('empresa').value,
+//             cnpj: document.getElementById('cnpj').value,
+//             termos: document.getElementById('termos').checked
+//         };
 
-        // Validate
-        if (!formData.termos) {
-            alert('Por favor, aceite os termos de uso e política de privacidade.');
-            return;
-        }
+//         // Validate
+//         if (!formData.termos) {
+//             alert('Por favor, aceite os termos de uso e política de privacidade.');
+//             return;
+//         }
 
-        // Show success message
-        alert('Formulário enviado com sucesso! Entraremos em contato em breve.');
+//         // Show success message
+//         alert('Formulário enviado com sucesso! Entraremos em contato em breve.');
         
-        // Reset form
-        contactForm.reset();
+//         // Reset form
+//         contactForm.reset();
 
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+//         // Scroll to top
+//         window.scrollTo({ top: 0, behavior: 'smooth' });
 
-        // In a real application, you would send this data to a server
-        console.log('Form Data:', formData);
-    });
-}
+//         // In a real application, you would send this data to a server
+//         console.log('Form Data:', formData);
+//     });
+// }
 
 // Add scroll animation to elements
 const observerOptions = {
